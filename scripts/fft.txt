@@ -1,0 +1,7 @@
+predict,'fft',station_I=['ABK'],model='GeoDGP',events='20',deltat=120,exponent=0.5
+
+predict,'fft',station_I=['ABK'],model='GeoDGP200',events='20',deltat=120,exponent=0.5,realization=2
+
+for i=0,199 do predict,'fft',station_I=['ABK'],model='GeoDGP200',events='20',deltat=120,exponent=0.5,realization=i,nsmooth=3
+
+

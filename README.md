@@ -4,7 +4,7 @@ GeoDGP is a data-driven model that probabilistically forecasts local geomagnetic
 
 ## Project Structure
 
-\`\`\`
+```
 your_project/
 ├── data/               # this can be downloaded from Deep Blue Data
 ├── figure/             # this can be downloaded from Deep Blue Data
@@ -12,16 +12,16 @@ your_project/
 ├── src/                # Source code
 ├── requirements.txt    # Python dependencies
 └── README.md
-\`\`\`
+```
 
 ## Getting Started
 
 ### 1. Clone the repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/HongfanChen/GeoDGP.git
 cd your-repo
-\`\`\`
+```
 
 ### 2. Set up a virtual environment (recommended)
 

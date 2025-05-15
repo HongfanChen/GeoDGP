@@ -44,32 +44,35 @@ pip install -r requirements.txt
 ## Features
 
 ### Input
+
 - Solar wind measurements from the first Lagrangian point (L1).
 - The location input.
+
 | Variable Name | Description |
 | :----: | :---- |
 | $B_x, B_y, B_z$ | Interplanetary Magnetic Field (IMF) |
 | $V_x$ | Solar wind velocity |
-| $N_p$| Proton number density |
+| $N_p$ | Proton number density |
 | $T$ | Plasma temperature |
 | Dst | Disturbance storm time index |
 | $\theta$ | Dipole tilt angle |
 | $\lambda$ | Geomagnetic latitude |
-| $\phi$ | Geomagnetic longitude in Solar Magnetic (SM) corrdinates |
+| $\phi$ | Geomagnetic longitude in Solar Magnetic (SM) coordinates |
 
 ### Output
-- The north, east, and horizontal components of geomagnetic perturbations ($dBH$, $dBN$, and $dBE$) with a lead time corresponding to the solar wind propagation time from L1.
+
+- The north, east, and horizontal components of geomagnetic perturbations ($dB_H$, $dB_N$, and $dB_E$) with a lead time corresponding to 1 hour plus the solar wind propagation time from L1.
 
 ## Data
 
-The data used in the paper is deposited in Deep Blue Data repository.
+The data used in the paper is deposited in [Deep Blue Data repository](https://doi.org/10.7302/6brp-0y03) .
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the CC BY-NC-SA 4.0 License - see the [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) file for details.
 
 ## Citation
 
-Hongfan Chen, Gabor Toth, Yang Chen, et al. <i>GeoDGP: One-Hour Ahead Global Probabilistic Geomagnetic Perturbation Forecasting using Deep Gaussian Process.</i> ESS Open Archive. December 23, 2024. DOI:
-<a href=“https://doi.org/10.22541/essoar.173499121.15272711/v1” target=“_blank”> 10.22541/essoar.173499121.15272711/v1</a>
+Hongfan Chen, Gabor Toth, Yang Chen, et al. <i>GeoDGP: One-Hour Ahead Global Probabilistic Geomagnetic Perturbation Forecasting using Deep Gaussian Process.</i> ESS Open Archive. December 23, 2024. DOI: <a href=“https://doi.org/10.22541/essoar.173499121.15272711/v1” target=“_blank”> 10.22541/essoar.173499121.15272711/v1</a>
 
+Chen, H., Chen, Y., Huang, Z., Zou, S., Huan, X., Toth, G. <i>Data and Analysis for Global Probabilistic Geomagnetic Perturbation Forecasting Using the Data-Driven Model GeoDGP</i> [Data set], University of Michigan - Deep Blue Data. https://doi.org/10.7302/6brp-0y03

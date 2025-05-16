@@ -1,6 +1,6 @@
 Copyright © <2024> The Regents of the University of Michigan
 
-## Overview
+## GeoDGP Overview
 
 Accurately predicting the horizontal component of ground magnetic field perturbations is crucial for the risk management of natural hazards caused by space weather events, such as geomagnetically induced currents (GICs). **GeoDGP** is a data-driven model that probabilistically forecasts local geomagnetic perturbations over the globe at 1-minute cadence and at most 1-hour ahead. The model is trained on 30 years of (1995-2022) NASA/GSFC’s [OMNI dataset](https://omniweb.gsfc.nasa.gov/) and [SuperMAG](https://supermag.jhuapl.edu/) ground magnetometer measurements.
 
@@ -37,7 +37,6 @@ Check out our [real-time global prediction](https://csem.engin.umich.edu/GeoDGP/
 
 ```bash
 git clone https://github.com/HongfanChen/GeoDGP.git
-cd your-repo
 ```
 
 ### 2. Set up a virtual environment (recommended)
@@ -66,16 +65,40 @@ GeoDGP/
 └── README.md
 ```
 
-## Data
+## Data Access
 
-The data used in the paper is deposited in [Deep Blue Data repository](https://doi.org/10.7302/6brp-0y03) .
+The data is deposited in [Deep Blue Data repository](https://doi.org/10.7302/6brp-0y03) .
 
 ## License
 
-This project is licensed under the CC BY-NC-SA 4.0 License - see the [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) file for details.
+This project is licensed under the PolyForm Noncommercial License 1.0.0 License - see the [LICENSE](LICENSE.txt) file for details.
 
 ## Citation
 
 Hongfan Chen, Gabor Toth, Yang Chen, et al. <i>GeoDGP: One-Hour Ahead Global Probabilistic Geomagnetic Perturbation Forecasting using Deep Gaussian Process.</i> ESS Open Archive. December 23, 2024. DOI: <a href=“https://doi.org/10.22541/essoar.173499121.15272711/v1” target=“_blank”> 10.22541/essoar.173499121.15272711/v1</a>
 
 Chen, H., Chen, Y., Huang, Z., Zou, S., Huan, X., Toth, G. <i>Data and Analysis for Global Probabilistic Geomagnetic Perturbation Forecasting Using the Data-Driven Model GeoDGP</i> [Data set], University of Michigan - Deep Blue Data. https://doi.org/10.7302/6brp-0y03
+
+## Credits
+
+Hongfan Chen: Conceptualization, Data Curation, Methodology, Formal Analysis, Software.
+
+Gabor Toth: Conceptualization, Supervision, Project Administration.
+
+Yang Chen: Methodology, Supervision.
+
+Shasha Zou: Formal Analysis, Supervision.
+
+Zhenguang Huang: Methodology.
+
+Xun Huan: Methodology, Supervision.
+
+Aniket Jivani: Website Development.
+
+## Contacts
+
+Please contact Hongfan Chen (chenhf@umich.edu) for any questions.
+
+## Acknowledgement
+
+This work is supported by the National Science Foundation (NSF) under Grant No. 2027555. NextGen Space Weather Modeling Framework Using Data, Physics and Uncertainty Quantification. We acknowledge use of NASA/GSFC’s Space Physics Data Facility’s OMNIWeb and CDAWeb service, and OMNI data. We gratefully acknowledge the SuperMAG collaborators. The Dst data are provided by the WDC for Geomagnetism, Kyoto.

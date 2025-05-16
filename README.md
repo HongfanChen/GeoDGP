@@ -1,3 +1,5 @@
+Copyright © <2024> The Regents of the University of Michigan
+
 ## Overview
 
 Accurately predicting the horizontal component of ground magnetic field perturbations is crucial for the risk management of natural hazards caused by space weather events, such as geomagnetically induced currents (GICs). **GeoDGP** is a data-driven model that probabilistically forecasts local geomagnetic perturbations over the globe at 1-minute cadence and at most 1-hour ahead. The model is trained on 30 years of (1995-2022) NASA/GSFC’s [OMNI dataset](https://omniweb.gsfc.nasa.gov/) and [SuperMAG](https://supermag.jhuapl.edu/) ground magnetometer measurements.

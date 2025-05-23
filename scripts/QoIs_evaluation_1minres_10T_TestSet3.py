@@ -236,11 +236,11 @@ class SuperMAGDataset(Dataset):
 
 path_prefix = "J:"
 path = path_prefix+"/Paper_deltaB/data/train/"
-QoIs = "dBN"
+QoIs = "dBH"
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 yeojohnson_lmbda = 1
 window_max = 10
-plot_image=False
+plot_image=True
 multihour_ahead = False
 with open(path + "scaler/scalerX_%s.pkl" % window_max,'rb') as f:
     scalerX = pickle.load(f)
@@ -270,8 +270,8 @@ else:
 # res_path = "J:/Paper_deltaB/data/test_station/TestSet3_IMF_DSCOVR_ACE/%sT/%s/" % (window_max, QoIs)
 os.makedirs(res_path, exist_ok = True)
 make_FFTfile = False
-make_TestSet3 = False
-make_FFT_mergedfile = True
+make_TestSet3 = True
+make_FFT_mergedfile = False
 make_TestSet3_figure = False
 station_to_evaluate_FFT = ['ABK', 'OTT', 'FRD']
 station_to_visualize = sorted(['ABK', 'NEW', 'OTT', 'MEA', 'WNG', 'YKC'])

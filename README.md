@@ -71,7 +71,7 @@ The data is deposited in [Deep Blue Data repository](https://doi.org/10.7302/6br
 
 ## License
 
-This project is licensed under the PolyForm Noncommercial License 1.0.0 License - see the [LICENSE](LICENSE.txt) file for details.
+This project is licensed under the PolyForm Noncommercial License 1.0.0 License - see the [LICENSE](LICENSE.txt) file for details. If you are interested in using the code for commercial purposes, please reach out to Hongfan Chen (chenhf@umich.edu).
 
 ## Citation
 

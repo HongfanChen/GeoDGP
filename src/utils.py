@@ -148,7 +148,18 @@ class SuperMAGDataset_fromtensor(Dataset):
     
     def __getitem__(self, idx):
         return {'X': self.X[idx], "Y": self.Y[idx]}
+
+class SuperMAGDataset_test(Dataset):
+    def __init__(self, storm_X_tensor, storm_Y_tensor):
+        self.X = storm_X_tensor
+        self.Y = storm_Y_tensor
     
+    def __len__(self):
+        return self.Y.shape[0]
+    
+    def __getitem__(self, idx):
+        return {'X': self.X[idx], "Y": self.Y[idx]}
+
 def sigma_GMM(pred_mean, pred_var):
     #\sigma = [\sigma1, \sigma2, ...]
     sigma = np.sqrt(pred_var.cpu().numpy()).reshape(-1,1).reshape(pred_var.shape)
@@ -163,3 +174,65 @@ def sigma_GMM(pred_mean, pred_var):
     ## the standard divation of a GMM f = \sum 1\{n} f_{i} with f_{i} being Gaussian.
     sigma_f = np.sqrt(bar_sigma_sq + bar_mu_sq - sq_bar_mu)
     return sigma_f
+
+def get_device() -> torch.device:
+    return torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
+
+
+def compute_hss(true_values, predictions, threshold):
+    """
+    Compute Heidke Skill Score based on a given threshold.
+    
+    Parameters:
+    - true_values: List or array of true values.
+    - predictions: List or array of predicted values.
+    - threshold: Threshold value to determine event occurrence.
+    
+    Returns:
+    - HSS: Heidke Skill Score.
+    """
+
+    # Convert numerical values to binary based on threshold
+    true_binary = pd.DataFrame((true_values >= threshold).astype(int))
+    pred_binary = pd.DataFrame((predictions >= threshold).astype(int))
+    pred_binary.index = true_binary.index
+
+    # Calculate confusion matrix values
+    a = np.sum((true_binary == 1) & (pred_binary == 1))
+    b = np.sum((true_binary == 0) & (pred_binary == 1))
+    c = np.sum((true_binary == 1) & (pred_binary == 0))
+    d = np.sum((true_binary == 0) & (pred_binary == 0))
+
+    # Compute Heidke Skill Score
+    denominator = (a+b)*(b+d) + (a+c)*(c+d)
+
+    return round(2*(a*d - b*c) / denominator,2)
+
+def compute_hss_count(true_values, predictions, threshold):
+    """
+    Compute Heidke Skill Score based on a given threshold.
+    
+    Parameters:
+    - true_values: List or array of true values.
+    - predictions: List or array of predicted values.
+    - threshold: Threshold value to determine event occurrence.
+    
+    Returns:
+    - HSS: Heidke Skill Score.
+    """
+
+    # Convert numerical values to binary based on threshold
+    true_binary = pd.DataFrame((true_values >= threshold).astype(int))
+    pred_binary = pd.DataFrame((predictions >= threshold).astype(int))
+    pred_binary.index = true_binary.index
+
+    # Calculate confusion matrix values
+    a = np.sum((true_binary == 1) & (pred_binary == 1))
+    b = np.sum((true_binary == 0) & (pred_binary == 1))
+    c = np.sum((true_binary == 1) & (pred_binary == 0))
+    d = np.sum((true_binary == 0) & (pred_binary == 0))
+
+    # Compute Heidke Skill Score
+    denominator = (a+b)*(b+d) + (a+c)*(c+d)
+    return (a,b,c,d)
+#     return round(2*(a*d - b*c) / denominator,2)

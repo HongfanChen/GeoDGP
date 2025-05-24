@@ -67,7 +67,7 @@ GeoDGP/
 
 ## Data Access
 
-The data is deposited in [Deep Blue Data repository](https://doi.org/10.7302/6brp-0y03) .
+To reproduce the results in the original paper, please refer to the dataset available at the [Deep Blue Data repository](https://doi.org/10.7302/6brp-0y03), and find the permanantly archived release of code at [![DOI](https://zenodo.org/badge/928522177.svg)](https://doi.org/10.5281/zenodo.15505660).
 
 ## License
 
